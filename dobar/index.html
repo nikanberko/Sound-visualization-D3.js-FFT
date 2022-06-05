@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>d3 | visualise audio</title>
+    <style>
+      
+      body {
+        font-family: monospace;
+        line-height: 1.5;
+        background-color: #130C0E;
+        padding: 20px;
+      }
+      
+      .grid {
+      display: grid;
+      grid-template-rows: auto;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+      gap: 5px 10px;
+    }
+      .slider{
+        -webkit-appearance: none;
+        width: 10vw;
+        height: 15px;
+        border-radius: 5px;
+        background: white;
+        outline: none;
+        opacity: 1;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+        font-family: monospace;
+      }
+
+      
+      .slider:hover {
+        opacity: 0.7;
+        
+      }
+
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: #5a5a5a;
+        cursor: pointer;
+      }
+
+      .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #2c2c2c;
+        cursor: pointer;
+      }
+
+      .controlLabels{
+        color:white;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <canvas id="visualizer"></canvas>
+
+    <div class="grid" >
+      <div id = "visualizerBlock" style="text-align: center; margin-top: 25px; "></div>
+      <label for="volume" class="controlLabels">Volume</label>
+      <input type="range" class="slider" min="0" max="1" value=".5" step=".01" id="volume">
+      <label for="bass" class="controlLabels">Bass</label>
+      <input type="range"  class="slider" min="-10" max="10" value="0" id="bass">
+      <label for="mid" class="controlLabels">Mid</label>
+      <input type="range" class="slider" min="-10" max="10" value="0" id="mid">
+      <label for="treble" class="controlLabels">Treble</label>
+      <input type="range" class="slider" min="-10" max="10" value="0" id="treble">
+      
+
+    </div>
+
+    <script src="http://d3js.org/d3.v7.min.js" charset="utf-8"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
