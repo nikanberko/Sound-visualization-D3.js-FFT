@@ -114,8 +114,8 @@
 
 
     function resize() {
-      svgWidth = visualizer.clientWidth * window.devicePixelRatio
-      svgHeight = visualizer.clientHeight * window.devicePixelRatio
+      svgWidth = visualizer.clientWidth * window.devicePixelRatio*0.8
+      svgHeight = visualizer.clientHeight * window.devicePixelRatio*0.8
     }
 
 
